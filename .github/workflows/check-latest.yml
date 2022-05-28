@@ -26,9 +26,6 @@ jobs:
             ls-remote --exit-code --refs --sort='version:refname' --tags https://github.com/etechonomy/joplin-server.git \
             | tail --lines=1 \
             | cut --delimiter='/' --fields=3)
-            
-        echo $RELEASE_VER
-        echo $LOCAL_VER
 
         if [[ $RELEASE_VER != $LOCAL_VER ]]; then
             echo "Local version: $LOCAL_VER"
